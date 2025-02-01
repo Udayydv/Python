@@ -59,13 +59,13 @@ function App() {
              target="_blank" 
              rel="noopener noreferrer"
              className="block">
-            <h1 className="text-4xl font-bold text-blue-500 hover:text-blue-600 transition-colors">
+            <h1 className="text-3xl md:text-4xl font-bold text-blue-500 hover:text-blue-600 transition-colors">
               Python Chat AI
             </h1>
           </a>
         </header>
 
-        {/* Scrollable Chat Container - Updated className */}
+        {/* Scrollable Chat Container */}
         <div 
           ref={chatContainerRef}
           className="flex-1 overflow-y-auto mb-4 rounded-lg bg-white shadow-lg p-4 hide-scrollbar"
@@ -122,7 +122,7 @@ function App() {
 
         {/* Fixed Input Form */}
         <form onSubmit={generateAnswer} className="bg-white rounded-lg shadow-lg p-4">
-          <div className="flex gap-2">
+          <div className="flex flex-col md:flex-row gap-2">
             <textarea
               required
               className="flex-1 border border-gray-300 rounded p-3 focus:border-blue-400 focus:ring-1 focus:ring-blue-400 resize-none"
@@ -139,7 +139,7 @@ function App() {
             ></textarea>
             <button
               type="submit"
-              className={`px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors ${
+              className={`mt-2 md:mt-0 md:px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors ${
                 generatingAnswer ? 'opacity-50 cursor-not-allowed' : ''
               }`}
               disabled={generatingAnswer}
